@@ -23,6 +23,7 @@ Title: Gislinge Viking Boat
   {#await gltf}
     <slot name="fallback" />
   {:then gltf}
+  <T.Group scale={0.01}>
     <T.Mesh
       geometry={gltf.nodes.Rigging_Pin_Ship_Oak_Aged_0.geometry}
       material={gltf.materials.Ship_Oak_Aged}
@@ -100,6 +101,7 @@ Title: Gislinge Viking Boat
       position={[-2.41, 105.15, -311.13]}
       rotation={[0.28, 0, 0]}
     />
+  </T.Group>
   {:catch error}
     <slot name="error" {error} />
   {/await}

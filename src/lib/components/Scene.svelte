@@ -2,6 +2,16 @@
   import { T } from '@threlte/core'
   import { ContactShadows, Float, Grid, OrbitControls } from '@threlte/extras'
   import Boat from './models/boat.svelte'
+  import { MeshBasicMaterial, PlaneGeometry, SphereGeometry } from 'three';
+
+  /**
+	 * @type {any}
+	 */
+  let planeRef;
+  /**
+	 * @type {any}
+	 */
+  let sphereRef;
 </script>
 
 <T.PerspectiveCamera
@@ -33,3 +43,13 @@
 />
 
 <Boat />
+
+<T.Mesh renderOrder={2} bind:ref={planeRef}>
+  <T.PlaneGeometry args={[20, 20]} />
+  <T.MeshBasicMaterial color={[1, 0, 1]} transparent opacity={0.25} />
+</T.Mesh>
+
+<T.Mesh position={[1, 2, 0]} bind:ref={sphereRef}>
+  <T.SphereGeometry args={[1, 20, 20]} />
+  <T.MeshBasicMaterial color={[1, 0, 0]} />
+</T.Mesh>
