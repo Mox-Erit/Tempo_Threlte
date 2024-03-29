@@ -1,6 +1,7 @@
 <script>
   import { T } from '@threlte/core'
   import { ContactShadows, Float, Grid, OrbitControls } from '@threlte/extras'
+  import Boat from './models/boat.svelte'
 </script>
 
 <T.PerspectiveCamera
@@ -31,4 +32,4 @@
   cellSize={2}
 />
 
-
+<Boat />
